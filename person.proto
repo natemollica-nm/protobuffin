@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package example;
+
+// Replace the import path with your actual Go module path
+option go_package = "gen/";
+
+message Person {
+  string name = 1;
+  int32 age = 2;
+}
