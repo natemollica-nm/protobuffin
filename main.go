@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"log"
 
+	pb "github.com/natemollica-nm/protobuffin/gen"
 	"google.golang.org/protobuf/proto"
-	protobuffin "protobuffin/gen" // adjust based on your module and directory
 )
 
 func main() {
-	p := &protobuffin.Person{
+	p := &pb.Person{
 		Name: "Alice",
 		Age:  30,
 	}
@@ -21,7 +21,7 @@ func main() {
 	}
 
 	// Unmarshal from binary
-	newPerson := &protobuffin.Person{}
+	newPerson := &pb.Person{}
 	if err := proto.Unmarshal(data, newPerson); err != nil {
 		log.Fatal("unmarshaling error: ", err)
 	}
